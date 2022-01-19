@@ -39,7 +39,7 @@ function escseq() {
    document.getElementById("h1").innerHTML=str5.split(" ")[2]; // stringleri bölerek array oluşturmak için
 } */
 
-function escseq() {
+/* function escseq() {
   let int = 1234;
 
   document.getElementById("h1").innerHTML =
@@ -69,4 +69,6 @@ function escseq4() {
    let float = "    -3.36579   45343 jvoıjfdva";
  
    document.getElementsByTagName("h2")[4].innerHTML = parseFloat(float); //metin içinden ilk sayı ondalık sayı olur önde sayı olmalı 
- }
+ } */
+
+ 
