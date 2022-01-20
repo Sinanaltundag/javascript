@@ -1,22 +1,29 @@
-let okul = ["kitap", "defter", "kalem", "silgi"];
+let okul = ["kitap", "defter", "kalem", "silgi"]; 
+okul.push("çizgi");
 
-const dolap = new Array("zeytin", "peynir");
+const kitap = new Array(okul, "peynir");// array ekleme
 
 function escseq() {
   
 
   document.getElementById("h1").innerHTML =
-    okul+"<br>"+dolap; // sayıları metine çevirme
+    okul+"<br>"+kitap; // sayıları metine çevirme
 }
 function escseq2() {
- const float = new Number(6.6766); 
 
-  document.getElementsByTagName("h2")[0].innerHTML = float.toFixed(2); //para yuvarlama gibi şeyler. noktadan sonrasını yuvarlıyor
+
+  document.getElementsByTagName("h2")[0].innerHTML = okul.values(); //value görme
 }
+var text = "<ul>"
+function ekle(a) {
+  text += "<li>" +a+"<li>";
+}
+okul.forEach(ekle);
+text += "</ul>";
 function escseq3() {
-  let float = 3.36579;
+ 
 
-  document.getElementsByTagName("h2")[1].innerHTML = float.toPrecision(2); //tam yuvarlama
+  document.getElementsByTagName("h2")[1].innerHTML = text; //array listeleme
 }
 function escseq4() {
    let float = "    3.36579   ";
