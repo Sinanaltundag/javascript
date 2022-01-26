@@ -75,3 +75,5 @@ console.log(null == true);
 console.log(null == undefined);
 console.log(null === undefined);
 console.log(2 == '2');
+
+document.getElementsByName()
