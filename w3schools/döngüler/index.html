@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <script>
+var players = ["Messi ", "Ronaldo ", "Hazard ", "Neymar ", "Salah "];
+var text = "";
+var i;  
+for (i = 2; i < players.length; i++) {
+text += players[i];
+}
+document.write(text);
+
+// const isnow = new Date();
+// console.log(isnow);
+//  if (isnow.getHours() < 10) {
+//      console.log("günaydın");
+//  } else {
+//     console.log("tünaydın");
+//  }
+let merhaba, hour;
+ let day;
+switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+    day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case  6:
+    day = "Saturday";
+}
+let a = new Date().getHours()
+switch ( true) {
+  case (a<10) :
+    merhaba = "günaydın";
+    break;
+    case (a<20):
+    
+      
+  merhaba = "iyi günler";
+    break;
+  case (a>20) :
+  merhaba = " iyi geceler";
+    break;
+    
+  default:merhaba="naber";
+}
+document.getElementById("demo").innerHTML = "Today is " + day ;
+document.getElementById("demo2").innerHTML =  merhaba;
+
+let text2 ="";
+for (let index = 0; ; index++) {
+    if (index==5) {
+        break
+    }
+    text2 += index+"<br>";
+    // if (index==5) {
+    //     break                 sonda olursa son döngüdeki metni ekliyor
+    // }
+    
+}
+document.getElementById("demo3").innerHTML =  text2;
+    </script>
+</body>
+</html>
