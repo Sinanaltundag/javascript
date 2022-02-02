@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        let res;
+       do { 
+            let stmt = prompt(
+        "Lütfen yapacağınız işlemi aralarına boşluk bırakarak girin"
+      );
+      let args = stmt.split(" ");
+      
+      switch (args[1]) {
+        case "+":
+          res = +args[0] + +args[2];
+          break;
+        case "-":
+          res = args[0] - args[2];
+          break;
+        case "*":
+          res = args[0]==0 || args[2] == 0 ? "0 dan farklı bir sayı girin" : args[0] * args[2];
+          break;
+        case "/":
+          res = args[0]==0 || args[2] == 0 ? "0 dan farklı bir sayı girin" : (args[0] / args[2]).toFixed(2);
+         
+          break;
+        default:
+            res= "İşlemi yanlış girdiniz.\n Aralarında boşluk bırakmayı unutmayın."
+          break;
+      }
+      console.log(res);
+        }  while (isNaN(res));
+      
+    </script>
+  </body>
+</html>
