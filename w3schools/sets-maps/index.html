@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/* const ev= new Set();
+ev.add("oda"),("balkon");
+ev.add("salon");
+ev.add("mutfak");
+console.log( ev); */
+
+const sayilar = [1,2,3,3,3,4,5,6,6,2,9,1,7]
+/* const element = new Set()
+for (let i = 0; i < sayilar.length; i++) {
+    
+    element.add(sayilar[i]) ;
+    
+}
+console.log(element); */
+
+const examples = new Map([
+    ["maps","m"],
+    ["arrays","a"],
+    ["objects","o"]
+]);
+console.log(examples);
+examples.set("strings", "s");
+examples.set("numbers", "n")
+console.log(examples);
+examples.set("arrays", "changed-a")
+console.log(examples);
+console.log(examples.get("numbers"));
+
+let text="";
+for (const x of examples.entries()) {
+    text+= x + "\n"
+}
+console.log(text);
+let text2= ""
+examples.forEach(function(a,b) {
+text2 += a + " = "+ b + "\n";
+})
+console.log(text2);
+</script>
+</body>
+</html>
