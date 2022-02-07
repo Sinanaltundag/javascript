@@ -78,3 +78,4 @@ console.log(fruits.indexOf("Orange",3));
 const colors = ["Red", "Yellow", "Green", "Blue", "Pink", "Green"];
 const x = colors.indexOf("Green", 3)
 console.log(x)
+
