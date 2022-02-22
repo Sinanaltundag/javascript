@@ -13,7 +13,7 @@ const createTask = (taskText) => {
   alert("Empty input!")
 };
 button.addEventListener("click", (e) => {
-  e.preventDefault();
+//   e.preventDefault();
 ul.innerHTML += createTask(inputText.value)
 form.reset();
 });
