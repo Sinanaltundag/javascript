@@ -12,7 +12,7 @@
         <tr><td id="t2">two</td></tr>
       </table>
 <script>
-    // Add an abortable event listener to table
+/*     // Add an abortable event listener to table
 const controller = new AbortController();
 const el = document.getElementById("outside");
 el.addEventListener("click", modifyText, { signal: controller.signal } );
@@ -27,6 +27,23 @@ function modifyText() {
     controller.abort(); // remove listener after value reaches "three"
   }
 }
+ */
+
+ let a= 1;
+ if (a==1) {
+   let b=2;
+ }
+ console.log(b);        // scope nedeniyle undefined hatası alırsınız
+ 
+ if (a==1) b=2;
+ console.log(b);        // hata yok b=2 çıkar ancak önceden tanımlı değilse strict mode aykırı
+
+ let b = a==1 ? 2 :null; 
+console.log(b);            //  if else kullanılacaksa ternary if daha iyi
+ 
+ let b = a==1&&2
+ console.log(b);        // hata yok ve kısa yazım b=2 çıkar
+
 
 </script>      
 </body>

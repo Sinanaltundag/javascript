@@ -8,38 +8,41 @@
 </head>
 <body>
     <script>
-let arr = ["ali","veli",49,"elli"]; //aarray ler object
-console.log(typeof arr);
-console.log(typeof NaN);
-console.log(typeof isNaN);
-console.log(typeof "46");
-console.log(typeof "");
-// console.log(typeof prompt(""));
-console.log(typeof {});
+// let arr = ["ali","veli",49,"elli"]; //aarray ler object
+// console.log(typeof arr);
+// console.log(typeof NaN);
+// console.log(typeof isNaN);
+// console.log(typeof "46");
+// console.log(typeof "");
+// // console.log(typeof prompt(""));
+// console.log(typeof {});
 
-let isArray = myArray=> (myArray.constructor.toString().indexOf("Array") > -1) 
-let isArray2 = myArray => myArray.constructor === Array
-let isDate = myDate => myDate.constructor === Date
-const tarih = new Date();
-const bugun = new Date().getDay;
-console.log(isArray(arr));
-console.log(isArray2(arr)); // array mı sorgusu
-console.log(isDate(tarih));
-console.log(isDate(bugun));//date fonksiyonunda iç özelliklerde string dönüyor isDate çalışmıyor
-console.log(typeof isArray);
-console.log(typeof myArray);
-
-
-
-// type conversations
-let y = "", z= " ", t="aa"
-
-console.log(typeof +y); //number 0
-console.log(+y);
-console.log(+z);
-console.log(+t); // number NaN
+// let isArray = myArray=> (myArray.constructor.toString().indexOf("Array") > -1) 
+// let isArray2 = myArray => myArray.constructor === Array
+// let isDate = myDate => myDate.constructor === Date
+// const tarih = new Date();
+// const bugun = new Date().getDay;
+// console.log(isArray(arr));
+// console.log(isArray2(arr)); // array mı sorgusu
+// console.log(isDate(tarih));
+// console.log(isDate(bugun));//date fonksiyonunda iç özelliklerde string dönüyor isDate çalışmıyor
+// console.log(typeof isArray);
+// console.log(typeof myArray);
 
 
+
+// // type conversations
+// let y = "", z= " ", t="aa"
+
+// console.log(typeof +y); //number 0
+// console.log(+y);
+// console.log(+z);
+// console.log(+t); // number NaN
+
+
+let a ="3 34 2.6 ddd"
+
+console.log(parseFloat(a));
     </script>
 </body>
 </html>
