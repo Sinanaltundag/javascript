@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr1 = [1, 2, 3, 4, 5];
+
+      /*       function newArr(arr) {
+        let arr2 = [];
+        for (let i = 0; i < arr1.length; i++) {
+          arr2.push(arr1.reduce((a, b) => a * b) / arr1[i]);
+        }
+        return arr2;
+      } */
+
+      //   console.log(newArr(arr1));
+
+    /*   function newArr(arr) {
+        let result = [];
+        for (let i = 0; i < arr.length; i++) {
+          let arr3 = [...arr];
+          arr3[i] = 1;
+          arr2.push(arr3.reduce((a, b) => a * b));
+        }
+        return result;
+      }
+      console.log(newArr(arr1)); */
+
+      function newArr(arr) {
+        let result = [];
+        for (const i of arr) {
+          let arr3 = [...arr];
+          arr3[i-1] = 1;
+          console.log(arr3);
+          result.push(arr3.reduce((a, b) => a * b));
+        }
+       return result;
+      }
+      console.log(newArr(arr1));
+
+    </script>
+  </body>
+</html>
