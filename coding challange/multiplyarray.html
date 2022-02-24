@@ -9,6 +9,7 @@
   <body>
     <script>
       let arr1 = [1, 2, 3, 4, 5];
+let b = [3,2,1]
 
       /*       function newArr(arr) {
         let arr2 = [];
@@ -20,29 +21,42 @@
 
       //   console.log(newArr(arr1));
 
-    /*   function newArr(arr) {
+/*       function newArr(arr) {
         let result = [];
         for (let i = 0; i < arr.length; i++) {
-          let arr3 = [...arr];
-          arr3[i] = 1;
-          arr2.push(arr3.reduce((a, b) => a * b));
+          let arr2 = [...arr];
+          arr2[i] = 1;
+          result.push(arr2.reduce((a, b) => a * b));
         }
         return result;
       }
-      console.log(newArr(arr1)); */
-
-      function newArr(arr) {
+      console.log(newArr(b)); */
+  
+     function newArr(arr) {
         let result = [];
-        for (const i of arr) {
+        
+        arr.forEach((a,i) => {
           let arr3 = [...arr];
-          arr3[i-1] = 1;
+          arr3.splice(0,i);
           console.log(arr3);
           result.push(arr3.reduce((a, b) => a * b));
-        }
+        });
+        
        return result;
-      }
-      console.log(newArr(arr1));
+      } 
+      console.log(newArr(b));
+/*       const array = [3,2,1]
+const newArray = []
 
+for(let i=0; i<array.length; i++){
+    let temp = array.shift()
+    console.log(temp);
+    newArray.push(array.reduce((a, b) => a * b))
+    array.push(temp)
+}
+
+console.log(newArray)
+ */
     </script>
   </body>
 </html>
