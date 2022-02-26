@@ -11,6 +11,7 @@
         <tr><td id="t1">one</td></tr>
         <tr><td id="t2">two</td></tr>
       </table>
+      <button id="e">ede</button>
 <script>
 /*     // Add an abortable event listener to table
 const controller = new AbortController();
@@ -29,7 +30,7 @@ function modifyText() {
 }
  */
 
- let a= 1;
+ /* let a= 1;
  if (a==1) {
    let b=2;
  }
@@ -42,7 +43,40 @@ function modifyText() {
 console.log(b);            //  if else kullanılacaksa ternary if daha iyi
  
  let b = a==1&&2
- console.log(b);        // hata yok ve kısa yazım b=2 çıkar
+ console.log(b);        // hata yok ve kısa yazım b=2 çıkar */
+
+const a =[2,22,34,15,99,100,1001,9,7] 
+a.sort((a,b)=> b-a);
+console.log(a);
+
+
+let ede = document.getElementById("e");
+let text = "bu bir paragraf"
+let aha = document.createElement("p")
+aha.innerHTML= text
+ede.appendChild(aha)
+document.body.appendChild(ede)
+
+ede.addEventListener("click",(e)=>{
+  console.log(this);
+  console.log(e);
+  console.log(mySchool);
+})
+
+class Okul{
+  constructor(name, address, type) {
+    this.name= name;
+    this.address=address
+    this.type=type
+  }
+  tanim(){
+    console.log(`${this.name}, ${this.address} 'de`);
+  }
+}
+let mySchool= new Okul("kasustu ilkokul", "kasustu, center street", "ilkokul")
+console.log(mySchool);
+
+mySchool.address.includes                                 
 
 
 </script>      

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+class Okul{
+  constructor(name, address, type) {
+    this.name= name;
+    this.address=address
+    this.type=type
+  }
+  tanim(num){
+    console.log(`${this.name}, ${this.address} 'de bir ${this.type}dur. ben ${num} yıldır orada öğrenciyim.`);
+  }
+}
+let mySchool= new Okul("kasustu ilkokulu", "kasustu, center street", "ilkokul")// constructor ile class dan object oluşturma 
+mySchool.il= "trabzon"  //? sonradan özellik ekleme
+console.log(mySchool);
+
+mySchool.tanim(2)  //!object metod kullanımı
+
+
+
+
+    </script>
+</body>
+</html>
