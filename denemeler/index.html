@@ -78,6 +78,51 @@ console.log(mySchool);
 
 mySchool.address.includes                                 
 
+/* let a= "abcba"
+let k= 2
+
+let ar=a.split("")
+console.log(ar);
+
+
+function findSubStr(str,num) {
+    
+} */
+const arr = ['nap',"a", 'teachers',"ear", 'cheaters', 'PAN', 'ear', 'era', 'hectares','a'];
+
+
+/* function cleanArr(arr) {
+  let map = new Map();
+
+  for (let value of arr) {
+    let key = value.toLowerCase().split('').sort().join('');
+    console.log(key,value);
+    map.set("1", value);
+  }
+  return Array.from(map.values());
+}
+
+console.log(cleanArr(arr)); */
+
+let aset = new Set(arr)
+
+console.log(aset.delete("a"));
+console.log(aset.has("a"));
+console.log(aset.keys());
+console.log(aset.values());
+
+for (const values of aset) {
+    console.log(values.length);
+}
+aset.forEach((al,bl)=>console.log(al,bl))
+
+const c = new WeakMap();
+console.log(arr);
+c.set(arr,1)
+c.set(aset,2)
+console.log(c.get(arr));
+console.log(c);
+
 
 </script>      
 </body>
