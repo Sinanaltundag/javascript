@@ -16,21 +16,24 @@ const school = {
   fullName: function () {
     return `${this.schoolName} ${this.type}`;
   },
-  clss: function(ad,no) {
+  clss: function (num, cl) {
     let obj = {};
-    let clss ={}
-    
-    for (const i of clsNumbers) {
-      for (const j of this.classGroups().keys()) {
-        obj[j] = {
+    let clss = {};
+    let d = clsNumbers[0];
 
-        };
+    let list = this.findClassesWithLetters(d);
+    for (const i of clsNumbers) {
+      for (const j of list) {
+        obj[j] = {};
       }
-      clss[i]=obj
-      // obj ={}
-    
-  }
-    return clss
+      d++;
+      clss[i] = obj;
+      obj = {};
+
+      list = this.findClassesWithLetters(d);
+    }
+
+    return clss;
   },
   classGroups: () => {
     const clsWithLttrs = new Map();
@@ -43,7 +46,14 @@ const school = {
     return clsWithLttrs;
   },
   findClassesWithLetters: function (number) {
-    return [...this.classGroups().entries()].filter((a) => a[1] === number);
+    // const a = new Map();
+
+    let a = [...this.classGroups().entries()].filter((a) => a[1] === number);
+    a.forEach((e) => {
+      e.splice(1, 1);
+    });
+    let b = a.flat();
+    return b;
   },
   classes: function () {
     const classList = new Map(school.classGroups());
@@ -55,11 +65,30 @@ const school = {
     return classList;
   },
   clsStudents: {
-    addStnt: function (a, b, c) {
-      school.clss()[1]["1-A"]={"ali":1} 
-      console.log(school.clss()[1]['1-A']);
-      return new StudentInfo(a, b, c);
+    addStnt: function (clsNum, clsName, no, ad, ...notlar) {
+      // nulish operator
+      let data = JSON.parse(localStorage.getItem("school")) ?? school.clss();
+      console.log(data);
+      data[clsNum][clsName][no] = { info: [ad, notlar] };
+      // let info = new Map();
+      // s[2]["2-A"] = info.set(11, 222);
+      // s[clsNum][clsName] = info.set(no, [ad, notlar]);
+      // console.log(data);
+      localStorage.setItem("school", JSON.stringify(data));
+      return data;
     },
+  },
+  getStudents: function (clsNum, clsName, no) {
+    let data = JSON.parse(localStorage.getItem("school"));
+    if (clsNum && clsName && no) {
+     return data[clsNum][clsName][no];
+    } else if (clsNum && clsName) {
+      return (data[clsNum][clsName]);
+    } else if (clsNum) {
+      return (data[clsNum]);
+    } else {
+      return (data);
+    }
   },
 };
 // console.log(school.fullName());
@@ -72,18 +101,20 @@ const school = {
 
 // console.log(school.findClassesWithLetters(1));
 
-school.clsStudents.addStnt();
+school.clsStudents.addStnt(1, "1-A", 1123, "bbbccc", 55, 43, 54);
+
+school.getStudents();
 // console.log(school.clsStudents.addStnt("ali", 1, "1-A"));
-school.clss()[1]["1-A"]=["ali"] 
+// school.clss()[1]["1-A"] = ["ali"];
 
-console.log(school.clss());
+// console.log(school.clss());
 
-let sc = {
-  1: {
-    "1-A": {
-      101: ["ali", "veli"],
-    },
-  },
-};
+// let sc = {
+//   1: {
+//     "1-A": {
+//       101: ["ali", "veli"],
+//     },
+//   },
+// };
 
-console.log(sc[1]["1-A"][101]);
+// console.log(sc[1]["1-A"][101]);
