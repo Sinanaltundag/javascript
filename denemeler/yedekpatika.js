@@ -17,9 +17,14 @@ const alphabet = "ABCDEFGHIJK";
 let letters = [];
 
 let data = JSON.parse(localStorage.getItem("school"))||{};
-fillSelect()
-console.log(Object.keys(data) );
+
+console.log(data);
 schoolNameHeader.innerHTML= localStorage.getItem("schoolName")? `${localStorage.getItem("schoolName")}<br><span class="badge rounded-pill bg-info fs-4">${localStorage.getItem("schoolType")}</span>`: "Enter School Information"
+schoolForm.classList.remove("d-none");//alta al
+ if (!data) {
+  searchBtn.disabled = true;
+  addStudent.disabled = true;
+} 
 
 schoolFormSubmit.addEventListener("click", (e) => {
   e.preventDefault();
@@ -33,62 +38,24 @@ schoolFormSubmit.addEventListener("click", (e) => {
   localStorage.setItem("school", JSON.stringify(school.clss()));
   localStorage.setItem("schoolName",school.schoolName);
   localStorage.setItem("schoolType",school.type);
-  schoolNameHeader.innerHTML= `${localStorage.getItem("schoolName")}<br><span class="badge rounded-pill bg-info fs-4">${localStorage.getItem("schoolType")}</span>`;
-  fillSelect()
-  
-  console.log(school.classGroups());
-  console.log(school.classes());
+  schoolNameHeader.innerHTML= `${localStorage.getItem("schoolName")}<br><span class="badge rounded-pill bg-info fs-4">${localStorage.getItem("schoolType")}</span>`
 
   console.log();
 });
 
-if (data=={}) {
-   schoolForm.classList.remove("d-none");//alta al
-  searchBtn.disabled = true;
-  addStudent.disabled = true;
-} 
 studentForm.addEventListener("change", (e)=>{
   console.log(e);
 
 if (e.target.id =="class-num") {
-  className.innerHTML=""
-  Object.keys(school.clsStudents.getStudents()[e.target.value]).forEach((item)=>{
-    className.innerHTML += `<option value="${item}">${item}</option>`
-  })
+  Object.keys(school.clsStudents.getStudents()[1])
 }
-if (e.target.id=="fullname") {
-  addStudent.disabled=false;
-}
+
+
+
+
 })
 
-studentForm.addEventListener("click", (e)=>{
-  if (e.target==searchBtn) {
-    e.preventDefault()
-    if (studentNo.value) {
-      let studentList =school.clsStudents.getStudents(classNum.value,className.value,studentNo.value);
-let tableRow = `<tr>
-    <th scope="row">${className.value}</th>
-    <td>${studentNo.value}</td>
-    <td>${studentList.info}</td>
-    <td>${studentNo.value}</td>
-  </tr>`
-console.log(studentList.info[0]);
-  console.log(studentList.info[1]);
-    }
-    
-    
 
-
-  }
-})
-
-function fillSelect() {
-  classNum.innerHTML="";
-  classNum.innerHTML = `<option selected disabled>Select Grade</option>`
-  Object.keys(data).forEach((item)=>{
-    classNum.innerHTML += `<option value="${item}">${item}</option>`
-  })
-}
 
 const school = {
   schoolName: "School Name",
@@ -114,17 +81,17 @@ const school = {
     return clss;
   },
   classGroups: () => {
-// let clsWithLttrs = Object.keys(school.clsStudents.getStudents()[1]);
+let clsWithLttrs = Object.keys(school.clsStudents.getStudents()[1]);
 
     
-    const clsWithLttrs = new Map();
+    /* const clsWithLttrs = new Map();
     console.log(clsNumbers+letters);
     clsNumbers.forEach((item) => {
       for (let i = 0; i < letters.length; i++) {
         let temp = `${item}-${letters[i]}`;
         clsWithLttrs.set(temp, item);
       }
-    });
+    }); */
     return clsWithLttrs;
   },
   findClassesWithLetters: function (number) {
@@ -137,7 +104,7 @@ const school = {
     let b = a.flat();
     return b;
   },
-  classes: function () {
+  /* classes: function () {
     const classList = new Map(school.classGroups());
     [...classList.keys()].forEach((key) => {
       classList.set(key, 0);
@@ -145,26 +112,12 @@ const school = {
     // classList.forEach((_,i) => {classList.set(i,0)});
 
     return classList;
-  },
+  }, */
   clsStudents: {
     addStnt: function (clsNum, clsName, no, ad, ...notlar) {
       // nulish operator
-      let data = JSON.parse(localStorage.getItem("school")) //?? school.clss();
+      let data = JSON.parse(localStorage.getItem("school")) ?? school.clss();
       // console.log(data);
-      
-  Object.keys(data).forEach((item)=>{
-    Object.keys(data[item]).forEach((innerItem)=>{
-      Object.keys(data[item][innerItem]).forEach((inner2Item)=>{
-    if (inner2Item.includes(no)){
-     if (confirm(`At ${innerItem} class there is same ${inner2Item} number. Do you want to update?`)) {
-      data[clsNum][clsName][no] = { info: [ad, notlar] };
-      localStorage.setItem("school", JSON.stringify(data));
-      return data;
-     } ;
-    }; 
-      })
-    })
-  })
       data[clsNum][clsName][no] = { info: [ad, notlar] };
       // let info = new Map();
       // s[2]["2-A"] = info.set(11, 222);
@@ -187,23 +140,23 @@ const school = {
   },
   },
 };
-console.log(data);
+
 console.log(school.classGroups());
 // school.classes=Object.fromEntries(school.classGroups())
-console.log(school.classes());
+// console.log(school.classes());
 
 // console.log(school.classGroups().get("1-A"));
 
-// console.log(school.findClassesWithLetters(1));
+console.log(school.findClassesWithLetters(1));
 
-// school.clsStudents.addStnt(1, "1-A", 1123, "bbbccc", 55, 43, 54);
-// console.log(school.clsStudents.getStudents()[1]);
-// console.log(Object.keys(school.clsStudents.getStudents()[1]) );
+school.clsStudents.addStnt(2, "2-A", 1123, "bbbccc", 55, 43, 54);
+console.log(school.clsStudents.getStudents()[1]);
+console.log(Object.keys(school.clsStudents.getStudents()[1]) );
 
 // console.log(school.clsStudents.addStnt("ali", 1, "1-A"));
 // school.clss()[1]["1-A"] = ["ali"];
 
-// console.log(school.clss());
+console.log(school.clss());
 
 // let sc = {
 //   1: {
