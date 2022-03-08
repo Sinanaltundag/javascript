@@ -1,19 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <table id="outside">
-        <tr><td id="t1">one</td></tr>
-        <tr><td id="t2">two</td></tr>
-      </table>
-      <button id="e">ede</button>
-<script>
-/*     // Add an abortable event listener to table
+      <tr>
+        <td id="t1">one</td>
+      </tr>
+      <tr>
+        <td id="t2">two</td>
+      </tr>
+    </table>
+    <button id="e">ede</button>
+    <script>
+
+let a = [[[1,2,3],4,5,[6,7,[8]]]]
+let b = [1].concat(a)
+console.log(a.flat(3));
+
+let arr = [1,2,0]
+console.log(arr.pop()==arr.sort().pop());
+
+const arr4 = [...new Set([3, 1, 2, 3, 4])];
+console.log(arr4.length, arr4[2]);
+
+
+      /* arr.forEach((item,i)=>{
+    arrList=[]
+    console.log(i);
+    arrList.push(arr[i],arr[i+1],arr[i+2])
+    if (condition) {
+      console.log(arrList);
+    }
+    
+  }) */
+
+/*       let arr = [10, 5, 2, 7, 8, 7, 20, 40];
+      let k = 4;
+      for (let i = 0; i < arr.length - k + 1; i++) {
+        let arrList = arr.slice(i, i + k);
+        arrList.sort(function (a, b) {return b - a});
+        console.log(arrList[0] + " = " + arrList);
+      } */
+
+      /*     // Add an abortable event listener to table
 const controller = new AbortController();
 const el = document.getElementById("outside");
 el.addEventListener("click", modifyText, { signal: controller.signal } );
@@ -30,7 +64,7 @@ function modifyText() {
 }
  */
 
- /* let a= 1;
+      /* let a= 1;
  if (a==1) {
    let b=2;
  }
@@ -45,7 +79,7 @@ console.log(b);            //  if else kullanılacaksa ternary if daha iyi
  let b = a==1&&2
  console.log(b);        // hata yok ve kısa yazım b=2 çıkar */
 
-const a =[2,22,34,15,99,100,1001,9,7] 
+      /* const a =[2,22,34,15,99,100,1001,9,7] 
 a.sort((a,b)=> b-a);
 console.log(a);
 
@@ -61,9 +95,9 @@ ede.addEventListener("click",(e)=>{
   console.log(this);
   console.log(e);
   console.log(mySchool);
-})
+}) */
 
-class Okul{
+      /* class Okul{
   constructor(name, address, type) {
     this.name= name;
     this.address=address
@@ -76,9 +110,9 @@ class Okul{
 let mySchool= new Okul("kasustu ilkokul", "kasustu, center street", "ilkokul")
 console.log(mySchool);
 
-mySchool.address.includes                                 
+mySchool.address.includes    */
 
-/* let a= "abcba"
+      /* let a= "abcba"
 let k= 2
 
 let ar=a.split("")
@@ -88,10 +122,9 @@ console.log(ar);
 function findSubStr(str,num) {
     
 } */
-const arr = ['nap',"a", 'teachers',"ear", 'cheaters', 'PAN', 'ear', 'era', 'hectares','a'];
+      //const arr = ['nap',"a", 'teachers',"ear", 'cheaters', 'PAN', 'ear', 'era', 'hectares','a'];
 
-
-/* function cleanArr(arr) {
+      /* function cleanArr(arr) {
   let map = new Map();
 
   for (let value of arr) {
@@ -104,7 +137,7 @@ const arr = ['nap',"a", 'teachers',"ear", 'cheaters', 'PAN', 'ear', 'era', 'hect
 
 console.log(cleanArr(arr)); */
 
-let aset = new Set(arr)
+      /* let aset = new Set(arr)
 
 console.log(aset.delete("a"));
 console.log(aset.has("a"));
@@ -121,9 +154,7 @@ console.log(arr);
 c.set(arr,1)
 c.set(aset,2)
 console.log(c.get(arr));
-console.log(c);
-
-
-</script>      
-</body>
+console.log(c); */
+    </script>
+  </body>
 </html>
