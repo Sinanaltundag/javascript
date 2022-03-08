@@ -12,7 +12,7 @@ function wait(ms) {
 // *                   PROMISES
 // *=====================================================
 
-const promise = new Promise((resolve, reject) => {
+const promise1 = new Promise((resolve, reject) => {
   // some calculation
   wait(2000);
   const userData = {
@@ -25,7 +25,7 @@ const promise = new Promise((resolve, reject) => {
   reject(new Error('Something went wrong!'));
 });
 
-// promise.then(
+// promise1.then(
 //   (result) => {
 //     console.log(result);
 //   },
@@ -34,7 +34,7 @@ const promise = new Promise((resolve, reject) => {
 //   }
 // );
 /* 
-promise
+promise1
   .then((res) => {
     console.log(res);
     return 'selam';
